@@ -1,1 +1,0 @@
-java -jar out\artifacts\PrintSkill_Default_jar\PrintSkill_Default.jar
