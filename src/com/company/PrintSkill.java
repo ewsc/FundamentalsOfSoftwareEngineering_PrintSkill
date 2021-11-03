@@ -81,10 +81,10 @@ public class PrintSkill {
                 Scanner sc_text = new Scanner(System.in);
                 TextIn = sc_text.nextLine();
                 if (TextIn.equalsIgnoreCase(Array[n])) {
-                    System.out.println("Fine! You entered word correctly!\n");
+                    System.out.println("\nFine! You entered word correctly!");
                     isPrecise = true;
                 } else {
-                    System.out.println("Enter the word correctly, without errors and extra spaces. Penalty 3 seconds!\n");
+                    System.out.println("\nEnter the word correctly, without errors and extra spaces. Penalty 3 seconds!\n");
                     TimeUnit.SECONDS.sleep(2);
                     isPrecise = false;
                 }
@@ -177,7 +177,7 @@ public class PrintSkill {
         long endTime = System.currentTimeMillis();
         long time = (endTime - startTime);
         float result = (float)time/1000;
-        System.out.println("\nSeconds spent: " + result);
+        System.out.println("\nTime spent: " + result + " seconds.");
         CalculateResults();
         OutResults(result, difficulty);
         PressAnyKey();
