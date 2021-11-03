@@ -2,6 +2,7 @@ package com.company;
 
 import java.util.*;
 import java.util.concurrent.TimeUnit;
+import org.junit.jupiter.api.Test;
 
 public class PrintSkill {
 
@@ -9,11 +10,13 @@ public class PrintSkill {
     protected static final String[] WordsMedium = {"Etymology", "Subvention", "Leucopathy", "Undergroan", "Haematosis", "Interpoint", "Distringas", "Reexchange", "Volitional", "Serjeantcy", "Unpitousty", "Torpidness", "Culvertail", "Sapiential", "Funambulus", "Eliquation", "Ruffianous", "Eikosylene", "Adjectived", "Inbreaking"};
     protected static final String[] WordsHard = {"Galactometries", "Factionalising", "Eccentricities", "Dactylographer", "Cabinetworkers", "Abominableness", "Labiogressions", "Macroaggregate", "Nanotechnology", "Paddleboatings", "Quadriennially", "Easterlinesses", "Backwardations", "Xanthosiderite", "Zombifications", "Yieldabilities", "Wafflestompers", "Valedictorians", "Tachygraphical", "Karyoplasmatic"};
 
+    @Test
     public static void presentProgram() {
         System.err.println("\nWelcome to PrintSkill! This program will help you improve your typing skills!");
         System.err.println("First, choose the difficulty.");
     }
 
+    @Test
     public static byte selectDifficulty() {
         boolean isCorrect;
         byte difficulty = 0;
@@ -35,6 +38,7 @@ public class PrintSkill {
         return difficulty;
     }
 
+    @Test
     public static void echoDifficulty(byte difficulty) {
         if (difficulty == 1)
             System.err.println("\nEasy difficulty was selected.");
@@ -44,6 +48,7 @@ public class PrintSkill {
             System.err.println("\nHard difficulty was selected.");
     }
 
+    @Test
     public static void outWords() throws InterruptedException {
         TimeUnit.SECONDS.sleep(2);
         System.err.println("\nYour words are ready. They will be withdrawn now.");
@@ -52,6 +57,7 @@ public class PrintSkill {
         TimeUnit.SECONDS.sleep(5);
     }
 
+    @Test
     public static void inputWords(byte difficulty) throws InterruptedException {
         boolean isPrecise;
         String TextIn;
@@ -92,6 +98,7 @@ public class PrintSkill {
         }
     }
 
+    @Test
     public static void calculateResults() throws InterruptedException {
         TimeUnit.SECONDS.sleep(2);
         System.err.print("Calculating results");
@@ -103,6 +110,7 @@ public class PrintSkill {
         System.err.println(".");
     }
 
+    @Test
     public static void outResults(float result, byte difficulty) {
         String FastestHand = "Your rating: 'The fastest hand in the Wild West.'";
         String Good = "Your rating: Good, but it could be better!";
@@ -130,12 +138,14 @@ public class PrintSkill {
         }
     }
 
+    @Test
     public static void pressAnyKey() {
         Scanner scan = new Scanner(System.in);
         System.err.print("Press any key to close...");
         scan.nextLine();
     }
 
+    @Test
     public static void main (String[] args) throws InterruptedException {
         byte difficulty;
         presentProgram();
