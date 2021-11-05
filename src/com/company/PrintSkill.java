@@ -110,6 +110,12 @@ public class PrintSkill {
         String Okay = "Your rating: Okay, but try your best next time!";
         String Satisfactory = "Your rating: Satisfactory. Practice more.";
         String Awful = "Your rating: Awful. You may have forgotten the location of the buttons on the keyboard.";
+        if (difficulty == 2) {
+            difficulty = (byte) (difficulty + 3);
+        }
+        else if (difficulty == 3) {
+            difficulty = (byte) (difficulty + 7);
+        }
         if (result <= (15 + difficulty)) {
             System.err.println(FastestHand);
         }
