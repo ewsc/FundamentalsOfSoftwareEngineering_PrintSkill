@@ -2,7 +2,7 @@
   <file path="./src/com/company/PrintSkill.java">
     <lineToCover lineNumber="1" covered="true"/>
     <lineToCover lineNumber="2" covered="true"/>
-    <lineToCover lineNumber="3" covered="treu"/>
+    <lineToCover lineNumber="3" covered="true"/>
     <lineToCover lineNumber="4" covered="true"/>
     <lineToCover lineNumber="5" covered="true"/>
   </file>
