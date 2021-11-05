@@ -1,6 +1,6 @@
-<coverage version="1">
-  <file path="src/com/company/PrintSkill.java">
+<testExecutions version="1">
+  <file path="./src/com/company/PrintSkill.java">
     <lineToCover lineNumber="112" covered="true"/>
-    <lineToCover lineNumber="5" covered="false"/>
+    <lineToCover lineNumber="5" covered="false"/>  
   </file>
-</coverage>
+</testExecutions>
