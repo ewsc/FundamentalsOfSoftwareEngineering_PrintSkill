@@ -89,7 +89,7 @@ class PrintSkillTest {
     }
 
     @Test
-    void main() {
+    void mainTest() {
         try {
             float result;
         }
