@@ -1,5 +1,5 @@
 <coverage version="1">
-  <file path="xources/hello/NoConditions.xoo">
+  <file path="./src/com/company/">
     <lineToCover lineNumber="1" covered="true"/>
     <lineToCover lineNumber="2" covered="false"/>
   </file>
