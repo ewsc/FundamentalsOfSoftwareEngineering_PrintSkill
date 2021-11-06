@@ -18,7 +18,7 @@ public class PrintSkill {
         boolean isCorrect;
         byte difficulty = 0;
         do {
-            System.err.print("Select difficulty (1 - Easy / 2 - Medium / 3 - Hard): ");
+            System.err.print("\nSelect difficulty (1 - Easy / 2 - Medium / 3 - Hard): ");
             Scanner sc_diff = new Scanner(System.in);
             isCorrect = true;
             try {
