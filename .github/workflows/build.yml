@@ -2,7 +2,7 @@ name: Build
 on:
   push:
     branches:
-      PrintSkills11
+      PrintSkills
   pull_request:
     types: [opened, synchronize, reopened]
 jobs:
