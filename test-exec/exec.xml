@@ -1,5 +1,5 @@
 <testExecutions version="1">
-  <file path="test/com/company/PrintSkillTest.java">
+  <file path="./test/com/company/PrintSkillTest.java">
     <testCase name="test1" duration="5"/>
     <testCase name="test2" duration="500">
       <skipped message="short message">other</skipped>
