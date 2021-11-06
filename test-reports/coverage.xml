@@ -1,13 +1,13 @@
 <coverage version="1">
   <file path="./src/com/company/PrintSkill.java">
-    <lineToCover lineNumber="1" covered="false"/>
-    <lineToCover lineNumber="2" covered="false"/>
-    <lineToCover lineNumber="3" covered="false"/>
-    <lineToCover lineNumber="4" covered="false"/>
-    <lineToCover lineNumber="5" covered="false"/>
-    <lineToCover lineNumber="6" covered="false"/>
-    <lineToCover lineNumber="7" covered="false"/>
-    <lineToCover lineNumber="8" covered="false"/>
+    <lineToCover lineNumber="1" covered="true"/>
+    <lineToCover lineNumber="2" covered="true"/>
+    <lineToCover lineNumber="3" covered="true"/>
+    <lineToCover lineNumber="4" covered="true"/>
+    <lineToCover lineNumber="5" covered="true"/>
+    <lineToCover lineNumber="6" covered="true"/>
+    <lineToCover lineNumber="7" covered="true"/>
+    <lineToCover lineNumber="8" covered="true"/>
     <lineToCover lineNumber="9" covered="true"/>
     <lineToCover lineNumber="10" covered="false"/>
     <lineToCover lineNumber="11" covered="false"/>
@@ -23,8 +23,8 @@
     <lineToCover lineNumber="21" covered="false"/>
     <lineToCover lineNumber="22" covered="true"/>
     <lineToCover lineNumber="23" covered="false"/>
-    <lineToCover lineNumber="24" covered="false"/>
-    <lineToCover lineNumber="25" covered="false"/>
+    <lineToCover lineNumber="24" covered="true"/>
+    <lineToCover lineNumber="25" covered="true"/>
     <lineToCover lineNumber="26" covered="false"/>
     <lineToCover lineNumber="27" covered="true"/>
     <lineToCover lineNumber="28" covered="true"/>
@@ -111,8 +111,8 @@
     <lineToCover lineNumber="109" covered="false"/>
     <lineToCover lineNumber="110" covered="false"/>
     <lineToCover lineNumber="111" covered="false"/>
-    <lineToCover lineNumber="112" covered="false"/>
-    <lineToCover lineNumber="113" covered="false"/>
+    <lineToCover lineNumber="112" covered="true"/>
+    <lineToCover lineNumber="113" covered="true"/>
     <lineToCover lineNumber="114" covered="false"/>
     <lineToCover lineNumber="115" covered="true"/>
     <lineToCover lineNumber="116" covered="true"/>
