@@ -1,6 +1,6 @@
 <coverage version="1">
   <file path="./src/com/company/PrintSkill.java">
-    <lineToCover lineNumber="6" covered="false"/>
+    <lineToCover lineNumber="6" covered="true"/>
     <lineToCover lineNumber="8" covered="true"/>
     <lineToCover lineNumber="9" covered="true"/>
     <lineToCover lineNumber="10" covered="true"/>
