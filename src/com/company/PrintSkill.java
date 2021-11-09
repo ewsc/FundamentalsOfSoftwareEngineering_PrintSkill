@@ -6,15 +6,15 @@ import java.util.concurrent.TimeUnit;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 
-public class Main {
+public class PrintSkill {
 
     protected static final String[] WordsEasy = {"Tomato", "Friend", "Excide", "Fabric", "Denote", "Naught", "Burman", "Potent", "Malaga", "Hacker", "Custom", "Hamper", "Civism", "Odible", "Rocket", "Guitar", "Swatch", "Burned", "Protect"};
     protected static final String[] WordsMedium = {"Etymology", "Subvention", "Leucopathy", "Undergroan", "Haematosis", "Interpoint", "Distringas", "Reexchange", "Volitional", "Serjeantcy", "Unpitousty", "Torpidness", "Culvertail", "Sapiential", "Funambulus", "Eliquation", "Ruffianous", "Eikosylene", "Adjectived", "Inbreaking"};
     protected static final String[] WordsHard = {"Galactometries", "Factionalising", "Eccentricities", "Dactylographer", "Cabinetworkers", "Abominableness", "Labiogressions", "Macroaggregate", "Nanotechnology", "Paddleboatings", "Quadriennially", "Easterlinesses", "Backwardations", "Xanthosiderite", "Zombifications", "Yieldabilities", "Wafflestompers", "Valedictorians", "Tachygraphical", "Karyoplasmatic"};
 
     public static String userPath;
-    public static String userName;
-    public static String userName2;
+    public static String userNameOne;
+    public static String userNameTwo;
 
     public static void presentProgram() {
         System.err.println("Welcome to PrintSkill! This program will help you improve your typing skills!");
@@ -39,8 +39,8 @@ public class Main {
     public static void updateUserInfo() {
         System.err.print("Enter username: ");
         Scanner in = new Scanner(System.in);
-        userName = in.nextLine();
-        userPath = "users\\" + userName + ".txt";
+        userNameOne = in.nextLine();
+        userPath = ".\\.\\users\\" + userNameOne + ".txt";
         try {
             Scanner scan = new Scanner(new File(userPath));
             int size = getResultsNumber();
@@ -49,15 +49,17 @@ public class Main {
             for(n = 0; n < size; n++) {
                 results[n] = scan.nextLine();
             }
-            System.err.println("Hello, " + userName + ", here are your previous result(s): \n");
+            System.err.println("\nHello, " + userNameOne + ", here are your previous result(s): \n");
             System.err.println("===========================================================");
+            byte f;
             for (i = 0; i < 5; i++) {
+                f = (byte) (i + 1);
                 size = size - 1;
                 if(size > -1)
-                    System.err.println(results[size] + "\n===========================================================");
+                    System.err.println("[" + f + "] " + results[size] + "\n===========================================================");
             }
         } catch (FileNotFoundException e){
-            System.err.println("Welcome to the club, " + userName + "!");
+            System.err.println("Welcome to the club, " + userNameOne + "!");
             System.err.println("TIP: Use this username next time to upload the results.");
         }
     }
@@ -142,7 +144,7 @@ public class Main {
 
     public static void calculateResults() throws InterruptedException {
         TimeUnit.SECONDS.sleep(2);
-        System.err.print("Calculating results\n");
+        System.err.print("Calculating results");
         TimeUnit.SECONDS.sleep(1);
         System.err.print(".");
         TimeUnit.SECONDS.sleep(1);
@@ -185,7 +187,7 @@ public class Main {
     }
 
     public static void pressAnyKey() {
-        System.err.println("\nSee you space cowboy.");
+        System.err.println("\nSee you again, cowboy.");
         Scanner scan = new Scanner(System.in);
         System.err.print("Press any key to close...");
         scan.nextLine();
@@ -236,7 +238,7 @@ public class Main {
         FileWriter writer = new FileWriter(userPath, true);
         DateTimeFormatter dtf = DateTimeFormatter.ofPattern("yyyy/MM/dd HH:mm:ss");
         LocalDateTime now = LocalDateTime.now();
-        writer.write(dtf.format(now) + " || Difficulty(" + wordDifficulty(difficulty) + "): " + result + " seconds.\n");
+        writer.write(dtf.format(now) + " || Difficulty (" + wordDifficulty(difficulty) + "): " + result + " seconds.\n");
         writer.close();
         calculateResults();
         outResults(result, difficulty);
@@ -246,7 +248,7 @@ public class Main {
         byte difficulty;
         difficulty = selectDifficulty();
         echoDifficulty(difficulty);
-        System.err.print(userName);
+        System.err.print("Now you rock, " + userNameOne + ".");
         outWords();
         long startTime = System.currentTimeMillis();
         inputWords(difficulty);
@@ -255,36 +257,36 @@ public class Main {
         float result1 = (float)time/1000;
         System.err.println("\nIt's time to swap, players!");
         TimeUnit.SECONDS.sleep(10);
-        System.err.print(userName2);
+        System.err.print(userNameTwo + ", make it burn.");
         outWords();
         startTime = System.currentTimeMillis();
         inputWords(difficulty);
         endTime = System.currentTimeMillis();
         time = (endTime - startTime);
         float result2 = (float)time/1000;
-        System.err.println(userName +" "+ result1 );
-        System.err.println(userName2 +" "+ result2 );
+        System.err.println("Results [" + userNameOne +"]: " + result1 + ".");
+        System.err.println("Results [" + userNameTwo + "]: " + result2 + ".");
         calculateResults();
         if (result1 > result2)
-            System.err.println(userName2 + " seems to be faster, Congrats " + userName2);
+            System.err.println("Looks like " + userNameTwo + " was faster! Congrats " + userNameTwo + "!");
         else if (result1 < result2)
-            System.err.println(userName + " seems to be faster, Congrats " + userName);
+            System.err.println("Looks like " + userNameOne + " was faster! Congrats " + userNameOne + "!");
         else
             System.err.println("OMG, how is that possible ???? ");
 
     }
 
     public static void session() throws IOException, InterruptedException {
-        System.err.print("\nDo you want to initiate multiplayer? ");
+        System.err.print("\nDo you want to initiate multiplayer mode? ");
         if (isApproved()){
-            System.err.print("Enter second players name : ");
+            System.err.print("Enter second player's username: ");
             Scanner in = new Scanner(System.in);
-            userName2 = in.nextLine();
+            userNameTwo = in.nextLine();
 
-            System.err.println("Multi session is active now. (Saves disabled)\n");
+            System.err.println("\nMultiplayer mode is active now. (Saves disabled)\n");
             do {
                 multiSession();
-                System.err.print("\nDo you want to continue this session? ");
+                System.err.print("\nDo you want to continue this session?");
                 isApproved();
             } while (isTrue);
         } else {
