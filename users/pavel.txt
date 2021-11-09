@@ -1,0 +1,10 @@
+2021/11/09 17:42:06 || Difficulty(Easy): 14.619 seconds.
+2021/11/09 17:47:46 || Difficulty(Easy): 16.057 seconds.
+2021/11/09 17:49:47 || Difficulty(Hard): 14.79 seconds.
+2021/11/09 17:50:50 || Difficulty(Medium): 14.406 seconds.
+2021/11/09 18:30:45 || Difficulty(Easy): 14.833 seconds.
+2021/11/09 18:42:05 || Difficulty(Easy): 14.172 seconds.
+2021/11/09 18:44:13 || Difficulty(Easy): 18.795 seconds.
+2021/11/09 18:45:39 || Difficulty(Medium): 20.801 seconds.
+2021/11/09 18:48:31 || Difficulty(Easy): 14.397 seconds.
+2021/11/09 19:06:58 || Difficulty(Easy): 15.328 seconds.
