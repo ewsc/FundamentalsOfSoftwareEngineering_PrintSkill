@@ -6,7 +6,7 @@ import java.util.concurrent.TimeUnit;
 import java.time.format.DateTimeFormatter;
 import java.time.LocalDateTime;
 
-public class PrintSkill {
+public class Main {
 
     protected static final String[] WordsEasy = {"Tomato", "Friend", "Excide", "Fabric", "Denote", "Naught", "Burman", "Potent", "Malaga", "Hacker", "Custom", "Hamper", "Civism", "Odible", "Rocket", "Guitar", "Swatch", "Burned", "Protect"};
     protected static final String[] WordsMedium = {"Etymology", "Subvention", "Leucopathy", "Undergroan", "Haematosis", "Interpoint", "Distringas", "Reexchange", "Volitional", "Serjeantcy", "Unpitousty", "Torpidness", "Culvertail", "Sapiential", "Funambulus", "Eliquation", "Ruffianous", "Eikosylene", "Adjectived", "Inbreaking"};
@@ -14,6 +14,7 @@ public class PrintSkill {
 
     public static String userPath;
     public static String userName;
+    public static String userName2;
 
     public static void presentProgram() {
         System.err.println("Welcome to PrintSkill! This program will help you improve your typing skills!");
@@ -53,7 +54,7 @@ public class PrintSkill {
             for (i = 0; i < 5; i++) {
                 size = size - 1;
                 if(size > -1)
-                System.err.println(results[size] + "\n===========================================================");
+                    System.err.println(results[size] + "\n===========================================================");
             }
         } catch (FileNotFoundException e){
             System.err.println("Welcome to the club, " + userName + "!");
@@ -209,6 +210,7 @@ public class PrintSkill {
             }
         }while(!isCorrect);
         return isTrue;
+
     }
 
     public static String wordDifficulty(byte difficulty) {
@@ -244,7 +246,7 @@ public class PrintSkill {
         byte difficulty;
         difficulty = selectDifficulty();
         echoDifficulty(difficulty);
-        System.err.print("\nPlayer 1.");
+        System.err.print(userName);
         outWords();
         long startTime = System.currentTimeMillis();
         inputWords(difficulty);
@@ -253,21 +255,32 @@ public class PrintSkill {
         float result1 = (float)time/1000;
         System.err.println("\nIt's time to swap, players!");
         TimeUnit.SECONDS.sleep(10);
-        System.err.print("\nPlayer 2.");
+        System.err.print(userName2);
         outWords();
         startTime = System.currentTimeMillis();
         inputWords(difficulty);
         endTime = System.currentTimeMillis();
         time = (endTime - startTime);
         float result2 = (float)time/1000;
-        System.err.println("Player 1: " + result1 + "\nPlayer 2: " + result2);
+        System.err.println(userName +" "+ result1 );
+        System.err.println(userName2 +" "+ result2 );
         calculateResults();
-        //Zaurs results
+        if (result1 > result2)
+            System.err.println(userName2 + " seems to be faster, Congrats " + userName2);
+        else if (result1 < result2)
+            System.err.println(userName + " seems to be faster, Congrats " + userName);
+        else
+            System.err.println("OMG, how is that possible ???? ");
+
     }
 
     public static void session() throws IOException, InterruptedException {
         System.err.print("\nDo you want to initiate multiplayer? ");
         if (isApproved()){
+            System.err.print("Enter second players name : ");
+            Scanner in = new Scanner(System.in);
+            userName2 = in.nextLine();
+
             System.err.println("Multi session is active now. (Saves disabled)\n");
             do {
                 multiSession();
