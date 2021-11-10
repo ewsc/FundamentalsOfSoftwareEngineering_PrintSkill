@@ -50,13 +50,13 @@ public class PrintSkill {
                 results[n] = scan.nextLine();
             }
             System.err.println("\nHello, " + userNameOne + ", here are your previous result(s): \n");
-            System.err.println("===========================================================");
+            System.err.println("===============================================================");
             byte f;
             for (i = 0; i < 5; i++) {
                 f = (byte) (i + 1);
                 size = size - 1;
                 if(size > -1)
-                    System.err.println("[" + f + "] " + results[size] + "\n===========================================================");
+                    System.err.println("[" + f + "] " + results[size] + "\n===============================================================");
             }
         } catch (FileNotFoundException e){
             System.err.println("Welcome to the club, " + userNameOne + "!");
@@ -87,11 +87,11 @@ public class PrintSkill {
 
     public static void echoDifficulty(byte difficulty) {
         if (difficulty == 1)
-            System.err.println("\nEasy difficulty was selected.");
+            System.err.println("Easy difficulty was selected.");
         else if (difficulty == 2)
-            System.err.println("\nMedium difficulty was selected.");
+            System.err.println("Medium difficulty was selected.");
         else
-            System.err.println("\nHard difficulty was selected.");
+            System.err.println("Hard difficulty was selected.");
     }
 
     public static void outWords() throws InterruptedException {
@@ -131,10 +131,10 @@ public class PrintSkill {
                 Scanner sc_text = new Scanner(System.in);
                 TextIn = sc_text.nextLine();
                 if (TextIn.equalsIgnoreCase(Array[n])) {
-                    System.err.println("\nFine! You entered word correctly!");
+                    System.err.println("Fine! You entered word correctly!");
                     isPrecise = true;
                 } else {
-                    System.err.println("\nEnter the word correctly, without errors and extra spaces. Penalty 3 seconds!");
+                    System.err.println("Enter the word correctly, without errors and extra spaces. Penalty 3 seconds!");
                     TimeUnit.SECONDS.sleep(3);
                     isPrecise = false;
                 }
@@ -169,25 +169,28 @@ public class PrintSkill {
         if (result <= (15 + difficulty)) {
             System.err.println(FastestHand);
         }
-        else if (result < (21 + difficulty) && result > (16 + difficulty)) {
+        else if (result < (21 + difficulty) && result > (15 + difficulty)) {
             System.err.println(Excellent);
         }
-        else if (result < (27 + difficulty) && result > (22 + difficulty)) {
+        else if (result < (27 + difficulty) && result >= (21 + difficulty)) {
             System.err.println(Good);
         }
-        else if (result < (33 + difficulty) && result > (28 + difficulty)) {
+        else if (result < (33 + difficulty) && result >= (27 + difficulty)) {
             System.err.println(Okay);
         }
-        else if (result < (39 + difficulty) && result > (34 + difficulty)) {
+        else if (result < (39 + difficulty) && result >= (33 + difficulty)) {
             System.err.println(Satisfactory);
         }
-        else {
+        else if (result >= (39 + difficulty)){
             System.err.println(Awful);
+        }
+        else{
+            System.err.println("OMG, how is that possible ????");
         }
     }
 
     public static void pressAnyKey() {
-        System.err.println("\nSee you again, cowboy.");
+        System.err.println("\nSee you space cowboy.");
         Scanner scan = new Scanner(System.in);
         System.err.print("Press any key to close...");
         scan.nextLine();
@@ -208,7 +211,7 @@ public class PrintSkill {
                 isTrue = false;
             else{
                 isCorrect = false;
-                System.err.print("Choose correctly (Y / N): ");
+                System.err.print("Enter your answer correctly: ");
             }
         }while(!isCorrect);
         return isTrue;
@@ -248,31 +251,31 @@ public class PrintSkill {
         byte difficulty;
         difficulty = selectDifficulty();
         echoDifficulty(difficulty);
-        System.err.print("Now you rock, " + userNameOne + ".");
+        System.err.print("\nNow you rock, " + userNameOne + ".");
         outWords();
         long startTime = System.currentTimeMillis();
         inputWords(difficulty);
         long endTime = System.currentTimeMillis();
         long time = (endTime - startTime);
         float result1 = (float)time/1000;
-        System.err.println("\nIt's time to swap, players!");
+        System.err.println("\nIt's time to swap, players. You have 10 seconds!");
         TimeUnit.SECONDS.sleep(10);
-        System.err.print(userNameTwo + ", make it burn.");
+        System.err.print("\n" + userNameTwo + ", make it burn.");
         outWords();
         startTime = System.currentTimeMillis();
         inputWords(difficulty);
         endTime = System.currentTimeMillis();
         time = (endTime - startTime);
         float result2 = (float)time/1000;
-        System.err.println("Results [" + userNameOne +"]: " + result1 + ".");
-        System.err.println("Results [" + userNameTwo + "]: " + result2 + ".");
+        System.err.println("\nTime spent [" + userNameOne +"]: " + result1 + " seconds.");
+        System.err.println("Time spent [" + userNameTwo + "]: " + result2 + " seconds.");
         calculateResults();
         if (result1 > result2)
             System.err.println("Looks like " + userNameTwo + " was faster! Congrats " + userNameTwo + "!");
         else if (result1 < result2)
             System.err.println("Looks like " + userNameOne + " was faster! Congrats " + userNameOne + "!");
         else
-            System.err.println("OMG, how is that possible ???? ");
+            System.err.println("OMG, how is that possible ????");
 
     }
 
@@ -282,8 +285,7 @@ public class PrintSkill {
             System.err.print("Enter second player's username: ");
             Scanner in = new Scanner(System.in);
             userNameTwo = in.nextLine();
-
-            System.err.println("\nMultiplayer mode is active now. (Saves disabled)\n");
+            System.err.println("Multiplayer mode is active now. (Saves disabled)\n");
             do {
                 multiSession();
                 System.err.print("\nDo you want to continue this session?");
